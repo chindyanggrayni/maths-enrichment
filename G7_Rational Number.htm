@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 7 Math: Integers, Fractions & Decimals</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .chip-plus { background-color: #3b82f6; color: white; }
+        .chip-minus { background-color: #ef4444; color: white; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo & Curriculum Badge -->
+                <div class="flex items-center space-x-3">
+                    <div class="bg-gradient-to-tr from-blue-600 via-indigo-600 to-teal-500 text-white p-2.5 rounded-xl shadow-md">
+                        <i class="fa-solid font-bold text-xl fa-square-root-variable"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-xl text-slate-900 tracking-tight block leading-none">
+                            Math <span class="text-blue-600">G7</span>
+                        </span>
+                        <span class="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full inline-block mt-0.5 border border-emerald-200">
+                            
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium text-slate-600">
+                    <a href="#overview" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">Overview</a>
+                    <a href="#modules" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">Core Modules</a>
+                    <a href="#workbench" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">Interactive Workbench</a>
+                    <a href="#word-problems" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">Story Problems</a>
+                    <a href="#quiz" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">4-Phase Quiz</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center">
+                    <a href="#quiz" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-xl shadow-md shadow-blue-500/20 transition flex items-center space-x-2">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Start Assessment</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2 text-sm font-medium">
+            <a href="#overview" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">Overview</a>
+            <a href="#modules" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">Core Modules</a>
+            <a href="#workbench" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">Interactive Workbench</a>
+            <a href="#word-problems" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">Story Problems</a>
+            <a href="#quiz" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">4-Phase Quiz</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="overview" class="relative bg-gradient-to-b from-blue-950 via-slate-900 to-indigo-950 text-white py-16 lg:py-20 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-blue-500/20 border border-blue-400/35 backdrop-blur px-3 py-1.5 rounded-full text-xs font-semibold text-blue-200">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>Grade 7 Rational Numbers</span>
+                    </div>
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                        Master <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-300 to-emerald-400">Integers, Fractions</span> & Decimals
+                    </h1>
+                    <p class="text-slate-300 text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Comprehensive learning hub for Grade 7 Mathematics <strong></strong>. Explore operations (+, -, ×, ÷), visual interactive tools, contextual daily word problems, and tiered 4-phase assessments.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#modules" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg shadow-blue-600/30 transition flex items-center space-x-2">
+                            <span>Explore Modules</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#workbench" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-6 py-3 rounded-xl transition flex items-center space-x-2">
+                            <i class="fa-solid fa-sliders"></i>
+                            <span>Interactive Tools</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Learning Outcome Cards -->
+                <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-white/10 backdrop-blur border border-white/10 p-5 rounded-2xl hover:border-blue-400/50 transition">
+                        <div class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center font-bold text-lg mb-3">
+                            <i class="fa-solid fa-plus-minus"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white">Integers (Bilangan Bulat)</h3>
+                        <p class="text-xs text-slate-300 mt-1">Signs, absolute value, number line navigation, and basic operations (+, -, ×, ÷).</p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur border border-white/10 p-5 rounded-2xl hover:border-teal-400/50 transition">
+                        <div class="w-10 h-10 bg-teal-500/20 text-teal-400 rounded-xl flex items-center justify-center font-bold text-lg mb-3">
+                            <i class="fa-solid fa-pie-chart"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white">Fractions (Pecahan)</h3>
+                        <p class="text-xs text-slate-300 mt-1">Common denominators (LCM), reciprocals, mixed numbers, and simplifying.</p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur border border-white/10 p-5 rounded-2xl hover:border-emerald-400/50 transition">
+                        <div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center font-bold text-lg mb-3">
+                            <i class="fa-solid fa-hashtag"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white">Decimals (Desimal)</h3>
+                        <p class="text-xs text-slate-300 mt-1">Place value alignment, decimal multiplication, division, and percentage conversions.</p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur border border-white/10 p-5 rounded-2xl hover:border-purple-400/50 transition">
+                        <div class="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center font-bold text-lg mb-3">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg text-white">4-Phase Tiered Quiz</h3>
+                        <p class="text-xs text-slate-300 mt-1">Easy, Medium, and Hard challenges across integers, fractions, decimals & word problems.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Concepts & Learning Modules -->
+    <section id="modules" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <h2 class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">Core Curriculum Content</h2>
+            <h3 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">Interactive Learning Modules</h3>
+            <p class="text-slate-600 mt-3 text-base">Select a main topic (Integers, Fractions, or Decimals) and navigate through specific operation rules with worked examples.</p>
+        </div>
+
+        <!-- Main Topic Category Selector -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+            <button onclick="switchMainTopic('integers')" id="mtopic-integers" class="mtopic-btn active px-6 py-3 rounded-2xl font-heading font-bold text-sm transition-all shadow-md bg-blue-600 text-white border border-blue-600 flex items-center space-x-2">
+                <i class="fa-solid fa-calculator"></i>
+                <span>1. Integers</span>
+            </button>
+            <button onclick="switchMainTopic('fractions')" id="mtopic-fractions" class="mtopic-btn px-6 py-3 rounded-2xl font-heading font-bold text-sm transition-all bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 flex items-center space-x-2">
+                <i class="fa-solid fa-pie-chart"></i>
+                <span>2. Fractions</span>
+            </button>
+            <button onclick="switchMainTopic('decimals')" id="mtopic-decimals" class="mtopic-btn px-6 py-3 rounded-2xl font-heading font-bold text-sm transition-all bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 flex items-center space-x-2">
+                <i class="fa-solid fa-hashtag"></i>
+                <span>3. Decimals & Percents</span>
+            </button>
+        </div>
+
+        <!-- Container for INTEGERS Modules -->
+        <div id="section-integers" class="topic-section bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl space-y-6">
+            <!-- Operation Sub Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 border-b border-slate-200 pb-4">
+                <button onclick="switchIntTab('add')" id="inttab-add" class="inttab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-blue-600 text-white">Addition (+)</button>
+                <button onclick="switchIntTab('sub')" id="inttab-sub" class="inttab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200">Subtraction (-)</button>
+                <button onclick="switchIntTab('mul')" id="inttab-mul" class="inttab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200">Multiplication (×)</button>
+                <button onclick="switchIntTab('div')" id="inttab-div" class="inttab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200">Division (÷)</button>
+            </div>
+
+            <!-- INTEGERS: ADDITION -->
+            <div id="intcontent-add" class="int-content space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Integer Module 1</span>
+                        <h4 class="font-heading text-2xl font-bold text-slate-900 mb-3">Adding Integers</h4>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Adding integers combines positive (gain/rightward) and negative (loss/leftward) values.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                <h5 class="font-bold text-slate-800 text-sm flex items-center text-blue-600">
+                                    <i class="fa-solid fa-check-circle mr-2"></i> Rule 1: Same Signs
+                                </h5>
+                                <p class="text-xs text-slate-600 mt-1">Add absolute values and keep the common sign. Example: <code>(-5) + (-3) = -8</code></p>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                <h5 class="font-bold text-slate-800 text-sm flex items-center text-blue-600">
+                                    <i class="fa-solid fa-check-circle mr-2"></i> Rule 2: Different Signs
+                                </h5>
+                                <p class="text-xs text-slate-600 mt-1">Subtract smaller absolute value from larger, keeping the sign of the larger. Example: <code>(-9) + (+4) = -5</code></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-100">
+                        <h5 class="font-heading font-bold text-lg text-blue-900 mb-3 text-center">Zero Pairs Concept</h5>
+                        <p class="text-xs text-slate-600 text-center mb-4">Positive (+1) and Negative (-1) cancel each other out to make zero.</p>
+                        <div class="p-4 bg-white rounded-xl border border-blue-200 text-center space-y-2">
+                            <div class="font-mono text-sm font-bold text-slate-800">(-4) + (+6)</div>
+                            <div class="text-xs text-slate-500">4 Negative Counters cancel 4 Positive Counters</div>
+                            <div class="text-lg font-bold text-blue-600">+2 Remaining</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTEGERS: SUBTRACTION -->
+            <div id="intcontent-sub" class="int-content hidden space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Integer Module 2</span>
+                        <h4 class="font-heading text-2xl font-bold text-slate-900 mb-3">Subtracting Integers</h4>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Subtraction is equivalent to <strong>adding the additive inverse (opposite)</strong>. Use the KCC rule!
+                        </p>
+                        <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 mb-4">
+                            <h5 class="font-bold text-amber-900 text-sm flex items-center">
+                                <i class="fa-solid fa-lightbulb text-amber-600 mr-2"></i> KCC Rule (Keep - Change - Change)
+                            </h5>
+                            <p class="text-xs text-amber-800 mt-1"><strong>Keep</strong> 1st number, <strong>Change</strong> minus to plus, <strong>Change</strong> sign of 2nd number.</p>
+                            <div class="mt-2 text-xs font-mono bg-white p-2 rounded border border-amber-200 text-slate-800">
+                                (-6) - (-10) &rarr; (-6) + (+10) = +4
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-100 text-center">
+                        <h5 class="font-heading font-bold text-lg text-purple-900 mb-3">Examples at a Glance</h5>
+                        <div class="space-y-2 text-xs font-mono text-left">
+                            <div class="p-3 bg-white rounded-lg border border-purple-200 flex justify-between">
+                                <span>(+7) - (+12) &rarr; (+7) + (-12)</span>
+                                <span class="font-bold text-purple-700">= -5</span>
+                            </div>
+                            <div class="p-3 bg-white rounded-lg border border-purple-200 flex justify-between">
+                                <span>(-3) - (+8) &rarr; (-3) + (-8)</span>
+                                <span class="font-bold text-purple-700">= -11</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTEGERS: MULTIPLICATION -->
+            <div id="intcontent-mul" class="int-content hidden space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Integer Module 3</span>
+                        <h4 class="font-heading text-2xl font-bold text-slate-900 mb-3">Multiplying Integers</h4>
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-center">
+                                <span class="text-xs font-bold text-emerald-800 block">SAME SIGNS &rarr; POSITIVE</span>
+                                <div class="text-xs font-mono text-slate-700 mt-1">(+) × (+) = +</div>
+                                <div class="text-xs font-mono text-slate-700">(-) × (-) = +</div>
+                            </div>
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-center">
+                                <span class="text-xs font-bold text-amber-800 block">DIFFERENT &rarr; NEGATIVE</span>
+                                <div class="text-xs font-mono text-slate-700 mt-1">(+) × (-) = -</div>
+                                <div class="text-xs font-mono text-slate-700">(-) × (+) = -</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-2xl border border-emerald-100 font-mono text-xs space-y-2">
+                        <div class="p-3 bg-white rounded-lg border border-slate-200 flex justify-between">
+                            <span>(-6) × (-7)</span><span class="font-bold text-emerald-600">+42</span>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg border border-slate-200 flex justify-between">
+                            <span>(-8) × (+5)</span><span class="font-bold text-red-600">-40</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTEGERS: DIVISION -->
+            <div id="intcontent-div" class="int-content hidden space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Integer Module 4</span>
+                        <h4 class="font-heading text-2xl font-bold text-slate-900 mb-3">Dividing Integers</h4>
+                        <p class="text-slate-600 leading-relaxed text-sm mb-4">Sign rules for division are identical to multiplication! Note: Division by 0 is UNDEFINED.</p>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs font-mono">
+                            <div>(-36) ÷ (-6) = <strong class="text-emerald-600">+6</strong></div>
+                            <div>(+45) ÷ (-9) = <strong class="text-red-600">-5</strong></div>
+                        </div>
+                    </div>
+                    <div class="bg-red-50 p-6 rounded-2xl border border-red-200">
+                        <h5 class="font-bold text-red-900 text-sm mb-2"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Zero in Division</h5>
+                        <p class="text-xs text-red-800"><code>0 ÷ (-7) = 0</code> (Allowed)<br><code>(-15) ÷ 0 = UNDEFINED</code> (Cannot divide by 0!)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container for FRACTIONS Modules -->
+        <div id="section-fractions" class="topic-section hidden bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl space-y-6">
+            <!-- Operation Sub Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 border-b border-slate-200 pb-4">
+                <button onclick="switchFracTab('addsub')" id="fractab-addsub" class="fractab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-teal-600 text-white">Addition & Subtraction</button>
+                <button onclick="switchFracTab('muldiv')" id="fractab-muldiv" class="fractab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200">Multiplication & Division</button>
+                <button onclick="switchFracTab('mixed')" id="fractab-mixed" class="fractab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200">Mixed & Improper Fractions</button>
+            </div>
+
+            <!-- FRACTIONS: ADD / SUB -->
+            <div id="fraccontent-addsub" class="frac-content space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Fraction Module 1</span>
+                        <h4 class="font-heading text-2xl font-bold text-slate-900 mb-3">Adding & Subtracting Fractions</h4>
+                        <p class="text-slate-600 leading-relaxed text-sm mb-4">
+                            Fractions must have a <strong>Common Denominator (LCM)</strong> before you can add or subtract numerators!
+                        </p>
+                        <div class="space-y-3 text-xs">
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                <h5 class="font-bold text-slate-800 text-sm text-teal-700 mb-1">Step 1: Like Denominators</h5>
+                                <p class="text-slate-600">Keep the denominator, add/subtract numerators: <code>2/7 + 3/7 = 5/7</code></p>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                <h5 class="font-bold text-slate-800 text-sm text-teal-700 mb-1">Step 2: Unlike Denominators</h5>
+                                <p class="text-slate-600">Find LCM of denominators, convert equivalent fractions, then calculate.</p>
+                                <div class="mt-2 font-mono p-2 bg-white rounded border border-slate-200">
+                                    1/3 + 1/4 &rarr; 4/12 + 3/12 = 7/12
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-teal-50 to-emerald-50 p-6 rounded-2xl border border-teal-100">
+                        <h5 class="font-heading font-bold text-lg text-teal-900 mb-3 text-center">Worked Example</h5>
+                        <div class="bg-white p-4 rounded-xl border border-teal-200 space-y-2 text-xs font-mono">
+                            <div class="font-bold text-slate-800">Calculate: 5/6 - 1/4</div>
+                            <div class="text-slate-600">LCM of 6 and 4 is 12</div>
+                            <div class="text-slate-600">5/6 = 10/12  |  1/4 = 3/12</div>
+                            <div class="text-teal-700 font-bold text-sm">10/12 - 3/12 = 7/12</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FRACTIONS: MUL / DIV -->
+            <div id="fraccontent-muldiv" class="frac-content hidden space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Fraction Module 2</span>
+                        <h4 class="font-heading text-2xl font-bold text-slate-900 mb-3">Multiplying & Dividing Fractions</h4>
+                        <div class="space-y-3 text-xs">
+                            <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-200">
+                                <h5 class="font-bold text-emerald-900 text-sm mb-1"><i class="fa-solid fa-xmark mr-1"></i> Multiplication</h5>
+                                <p class="text-slate-700">Multiply numerator by numerator, denominator by denominator! Direct calculation.</p>
+                                <div class="mt-2 font-mono bg-white p-2 rounded border border-emerald-200">
+                                    (2/3) × (4/5) = (2×4) / (3×5) = 8/15
+                                </div>
+                            </div>
+                            <div class="p-4 bg-indigo-50 rounded-xl border border-indigo-200">
+                                <h5 class="font-bold text-indigo-900 text-sm mb-1"><i class="fa-solid fa-divide mr-1"></i> Division (Keep-Change-Flip)</h5>
+                                <p class="text-slate-700">Keep 1st fraction, Change ÷ to ×, Flip 2nd fraction (reciprocal).</p>
+                                <div class="mt-2 font-mono bg-white p-2 rounded border border-indigo-200">
+                                    (3/4) ÷ (2/5) &rarr; (3/4) × (5/2) = 15/8 = 1 7/8
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-slate-50 to-teal-50 p-6 rounded-2xl border border-slate-200 text-center">
+                        <h5 class="font-heading font-bold text-slate-800 mb-2">Remember: Always Simplify!</h5>
+                        <p class="text-xs text-slate-600 mb-3">Divide numerator and denominator by their Greatest Common Factor (GCF).</p>
+                        <div class="p-3 bg-white rounded-xl border border-slate-300 font-mono text-xs text-slate-800">
+                            12/18 &rarr; Divide top and bottom by 6 &rarr; <strong class="text-teal-600">2/3</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FRACTIONS: MIXED & IMPROPER -->
+            <div id="fraccontent-mixed" class="frac-content hidden space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Fraction Module 3</span>
+                        <h4 class="font-heading text-2xl font-bold text-slate-900 mb-3">Improper Fractions & Mixed Numbers</h4>
+                        <div class="space-y-3 text-xs">
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                <h5 class="font-bold text-slate-800 text-sm mb-1">Mixed to Improper</h5>
+                                <p class="text-slate-600">Multiply whole number by denominator, add numerator.</p>
+                                <div class="mt-2 font-mono bg-white p-2 rounded border border-slate-200">
+                                    2 3/5 &rarr; ((2×5) + 3)/5 = 13/5
+                                </div>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                <h5 class="font-bold text-slate-800 text-sm mb-1">Improper to Mixed</h5>
+                                <p class="text-slate-600">Divide numerator by denominator. Quotient = Whole, Remainder = Numerator.</p>
+                                <div class="mt-2 font-mono bg-white p-2 rounded border border-slate-200">
+                                    17/5 &rarr; 17 ÷ 5 = 3 remainder 2 &rarr; 3 2/5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-teal-50 p-6 rounded-2xl border border-teal-200 text-center">
+                        <i class="fa-solid fa-shapes text-3xl text-teal-600 mb-2"></i>
+                        <h5 class="font-heading font-bold text-teal-900 mb-1">Grade 7 Pro Tip</h5>
+                        <p class="text-xs text-teal-800 leading-relaxed">Always convert mixed numbers into improper fractions BEFORE multiplying or dividing!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container for DECIMALS & PERCENTS Modules -->
+        <div id="section-decimals" class="topic-section hidden bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl space-y-6">
+            <!-- Operation Sub Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 border-b border-slate-200 pb-4">
+                <button onclick="switchDecTab('ops')" id="dectab-ops" class="dectab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-emerald-600 text-white">Decimal Operations (+, -, ×, ÷)</button>
+                <button onclick="switchDecTab('conversion')" id="dectab-conversion" class="dectab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200">Fraction & Percent Conversion</button>
+            </div>
+
+            <!-- DECIMALS: OPERATIONS -->
+            <div id="deccontent-ops" class="dec-content space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Decimal Module 1</span>
+                        <h4 class="font-heading text-2xl font-bold text-slate-900 mb-3">Operating with Decimals</h4>
+                        <div class="space-y-3 text-xs">
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                <h5 class="font-bold text-slate-800 text-sm text-emerald-700 mb-1">Addition & Subtraction</h5>
+                                <p class="text-slate-600"><strong>Line up the decimal points vertically!</strong> Fill missing places with zeroes.</p>
+                                <div class="mt-2 font-mono bg-white p-2 rounded border border-slate-200">
+                                    12.40 + 3.85 = 16.25  |  7.50 - 2.18 = 5.32
+                                </div>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                <h5 class="font-bold text-slate-800 text-sm text-emerald-700 mb-1">Multiplication</h5>
+                                <p class="text-slate-600">Multiply normally, then count total decimal digits in both factors to place the point.</p>
+                                <div class="mt-2 font-mono bg-white p-2 rounded border border-slate-200">
+                                    0.3 (1 decimal) × 0.04 (2 decimals) = 0.012 (3 decimals)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-2xl border border-emerald-100">
+                        <h5 class="font-heading font-bold text-emerald-900 mb-3 text-center">Decimal Division Rule</h5>
+                        <p class="text-xs text-slate-600 mb-3">Shift the decimal point right in both divisor and dividend until divisor is a whole number.</p>
+                        <div class="p-4 bg-white rounded-xl border border-emerald-200 text-xs font-mono space-y-1">
+                            <div>Calculate: 4.8 ÷ 0.12</div>
+                            <div>Shift 2 places right &rarr; 480 ÷ 12</div>
+                            <div class="text-emerald-700 font-bold text-sm pt-1">= 40</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DECIMALS: CONVERSIONS -->
+            <div id="deccontent-conversion" class="dec-content hidden space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Decimal Module 2</span>
+                        <h4 class="font-heading text-2xl font-bold text-slate-900 mb-3">Fractions, Decimals & Percentages</h4>
+                        <p class="text-slate-600 leading-relaxed text-sm mb-4">
+                            Rational numbers can be represented interchangeably in fraction, decimal, or percentage form.
+                        </p>
+                        <div class="space-y-2 text-xs font-mono">
+                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between">
+                                <span>1/2 = 0.5</span>
+                                <span class="font-bold text-emerald-700">50%</span>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between">
+                                <span>1/4 = 0.25</span>
+                                <span class="font-bold text-emerald-700">25%</span>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between">
+                                <span>3/4 = 0.75</span>
+                                <span class="font-bold text-emerald-700">75%</span>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex justify-between">
+                                <span>1/5 = 0.2</span>
+                                <span class="font-bold text-emerald-700">20%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-200 text-center space-y-3">
+                        <h5 class="font-heading font-bold text-emerald-900 text-lg">Quick Conversion Formulas</h5>
+                        <div class="text-xs text-slate-700 space-y-2 text-left">
+                            <div class="p-2 bg-white rounded border border-emerald-200">
+                                <strong>Fraction &rarr; Decimal:</strong> Divide numerator by denominator (e.g. 3 ÷ 8 = 0.375)
+                            </div>
+                            <div class="p-2 bg-white rounded border border-emerald-200">
+                                <strong>Decimal &rarr; Percent:</strong> Multiply by 100 (e.g. 0.375 × 100 = 37.5%)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Interactive Workbench -->
+    <section id="workbench" class="py-16 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Interactive STEM Lab</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mt-1">Multi-Tool Interactive Workbench</h2>
+                <p class="text-slate-400 text-sm mt-2">Switch between the Integer Number Line, Fraction Slice Visualizer, and Decimal Converter!</p>
+            </div>
+
+            <!-- Workbench Tool Selector -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button onclick="switchTool('numline')" id="toolbtn-numline" class="tool-btn px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm bg-blue-600 text-white">
+                    <i class="fa-solid fa-arrows-left-right mr-1"></i> 1. Integer Number Line
+                </button>
+                <button onclick="switchTool('fracvis')" id="toolbtn-fracvis" class="tool-btn px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm bg-slate-800 text-slate-300 hover:bg-slate-700">
+                    <i class="fa-solid fa-pie-chart mr-1"></i> 2. Fraction Visualizer
+                </button>
+                <button onclick="switchTool('converter')" id="toolbtn-converter" class="tool-btn px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm bg-slate-800 text-slate-300 hover:bg-slate-700">
+                    <i class="fa-solid fa-repeat mr-1"></i> 3. Decimal & Percent Converter
+                </button>
+            </div>
+
+            <div class="bg-slate-800 rounded-3xl p-6 sm:p-8 border border-slate-700 shadow-2xl">
+                
+                <!-- TOOL 1: INTEGER NUMBER LINE -->
+                <div id="tool-numline" class="tool-panel space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">First Integer (a)</label>
+                            <input type="number" id="num-a" value="-3" min="-10" max="10" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 text-center font-mono text-lg font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Operation</label>
+                            <select id="op-select" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 text-center font-mono text-lg font-bold">
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value="*">×</option>
+                                <option value="/">÷</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Second Integer (b)</label>
+                            <input type="number" id="num-b" value="7" min="-10" max="10" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 text-center font-mono text-lg font-bold">
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-4 sm:p-6 border border-slate-800 relative overflow-x-auto">
+                        <div id="numberline-container" class="min-w-[600px] h-48 relative flex flex-col justify-between py-2">
+                            <svg id="numberline-svg" class="w-full h-full absolute inset-0"></svg>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="text-center sm:text-left">
+                            <span class="text-xs text-blue-400 font-semibold uppercase tracking-wider block">Step Breakdown</span>
+                            <div id="sim-explanation" class="text-sm text-slate-200 mt-1 font-sans">
+                                Start at 0 &rarr; Move left 3 units to -3 &rarr; Add 7 units right &rarr; End at +4.
+                            </div>
+                        </div>
+                        <div class="bg-blue-600/30 border border-blue-500/40 px-6 py-3 rounded-2xl text-center min-w-[140px]">
+                            <span class="text-xs text-blue-300 block">Result</span>
+                            <span id="sim-result" class="font-heading font-black text-3xl text-blue-400">+4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOOL 2: FRACTION VISUALIZER & CALCULATOR -->
+                <div id="tool-fracvis" class="tool-panel hidden space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 items-center text-center">
+                        <!-- Fraction 1 -->
+                        <div class="sm:col-span-2 bg-slate-900 p-4 rounded-2xl border border-slate-700 space-y-2">
+                            <span class="text-xs text-teal-400 font-bold uppercase block">Fraction 1</span>
+                            <div class="flex items-center justify-center space-x-2">
+                                <input type="number" id="f1-num" value="3" min="1" max="12" class="w-16 bg-slate-800 border border-slate-600 rounded-lg p-2 text-center text-white font-bold">
+                                <span class="text-slate-400 text-xl font-bold">/</span>
+                                <input type="number" id="f1-den" value="4" min="1" max="12" class="w-16 bg-slate-800 border border-slate-600 rounded-lg p-2 text-center text-white font-bold">
+                            </div>
+                        </div>
+
+                        <!-- Op -->
+                        <div class="sm:col-span-1">
+                            <select id="frac-op" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white font-bold text-center">
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value="*">×</option>
+                                <option value="/">÷</option>
+                            </select>
+                        </div>
+
+                        <!-- Fraction 2 -->
+                        <div class="sm:col-span-2 bg-slate-900 p-4 rounded-2xl border border-slate-700 space-y-2">
+                            <span class="text-xs text-teal-400 font-bold uppercase block">Fraction 2</span>
+                            <div class="flex items-center justify-center space-x-2">
+                                <input type="number" id="f2-num" value="1" min="1" max="12" class="w-16 bg-slate-800 border border-slate-600 rounded-lg p-2 text-center text-white font-bold">
+                                <span class="text-slate-400 text-xl font-bold">/</span>
+                                <input type="number" id="f2-den" value="3" min="1" max="12" class="w-16 bg-slate-800 border border-slate-600 rounded-lg p-2 text-center text-white font-bold">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Slices Bar -->
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-4">
+                        <span class="text-xs font-bold text-teal-400 uppercase tracking-wider block">Visual Portion Bar Representation</span>
+                        <div class="space-y-3">
+                            <div>
+                                <span id="lbl-bar1" class="text-xs text-slate-400 block mb-1">Fraction 1: 3/4 (75%)</span>
+                                <div class="w-full bg-slate-800 rounded-lg h-6 overflow-hidden flex">
+                                    <div id="bar1-fill" class="bg-teal-500 h-full transition-all duration-300" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <span id="lbl-bar2" class="text-xs text-slate-400 block mb-1">Fraction 2: 1/3 (33.3%)</span>
+                                <div class="w-full bg-slate-800 rounded-lg h-6 overflow-hidden flex">
+                                    <div id="bar2-fill" class="bg-indigo-500 h-full transition-all duration-300" style="width: 33.33%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculation Output -->
+                    <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs text-teal-400 font-bold uppercase block">Step-by-Step Solution</span>
+                            <div id="frac-calc-steps" class="text-sm text-slate-200 mt-1 font-mono">
+                                3/4 + 1/3 = 9/12 + 4/12 = 13/12 = 1 1/12
+                            </div>
+                        </div>
+                        <div class="bg-teal-600/30 border border-teal-500/40 px-6 py-3 rounded-2xl text-center min-w-[150px]">
+                            <span class="text-xs text-teal-300 block">Simplified Fraction</span>
+                            <span id="frac-calc-result" class="font-heading font-black text-2xl text-teal-400">1 1/12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOOL 3: DECIMAL & PERCENT CONVERTER -->
+                <div id="tool-converter" class="tool-panel hidden space-y-6">
+                    <div class="max-w-md mx-auto bg-slate-900 p-6 rounded-2xl border border-slate-700 space-y-4">
+                        <label class="block text-xs font-bold text-emerald-400 uppercase text-center">Input Fraction Numerator & Denominator</label>
+                        <div class="flex items-center justify-center space-x-3">
+                            <input type="number" id="conv-num" value="3" min="1" max="100" class="w-20 bg-slate-800 border border-slate-600 rounded-xl p-3 text-center text-white font-bold text-lg">
+                            <span class="text-slate-400 text-2xl font-bold">/</span>
+                            <input type="number" id="conv-den" value="8" min="1" max="100" class="w-20 bg-slate-800 border border-slate-600 rounded-xl p-3 text-center text-white font-bold text-lg">
+                        </div>
+                    </div>
+
+                    <!-- Output Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-slate-900 p-5 rounded-2xl border border-slate-700 text-center">
+                            <span class="text-xs text-slate-400 block mb-1">Decimal Form</span>
+                            <span id="conv-dec" class="font-heading font-extrabold text-3xl text-emerald-400">0.375</span>
+                        </div>
+                        <div class="bg-slate-900 p-5 rounded-2xl border border-slate-700 text-center">
+                            <span class="text-xs text-slate-400 block mb-1">Percentage Form</span>
+                            <span id="conv-pct" class="font-heading font-extrabold text-3xl text-teal-400">37.5%</span>
+                        </div>
+                        <div class="bg-slate-900 p-5 rounded-2xl border border-slate-700 text-center">
+                            <span class="text-xs text-slate-400 block mb-1">Status</span>
+                            <span id="conv-status" class="font-heading font-extrabold text-xl text-blue-400 mt-1 block">Proper Fraction</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-World Word Problems (Soal Cerita Contextual) -->
+    <section id="word-problems" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-xs font-bold text-indigo-600 uppercase tracking-widest">Real-World Mathematics</span>
+            <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Contextual Word Problems Bank</h2>
+            <p class="text-slate-600 mt-2 text-base">Filter daily life scenarios by category to practice translating real situations into mathematical calculations.</p>
+        </div>
+
+        <!-- Problem Category Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+            <button onclick="filterProblems('all')" id="pfilter-all" class="pfilter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-blue-600 text-white">All Problems</button>
+            <button onclick="filterProblems('integers')" id="pfilter-integers" class="pfilter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200">Integers</button>
+            <button onclick="filterProblems('fractions')" id="pfilter-fractions" class="pfilter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200">Fractions</button>
+            <button onclick="filterProblems('decimals')" id="pfilter-decimals" class="pfilter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200">Decimals</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Problem 1: Submarine Depth (Integers) -->
+            <div class="pcard pcard-integers bg-white rounded-3xl p-6 border border-slate-200 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+                            <i class="fa-solid fa-ship"></i> Integers
+                        </span>
+                        <span class="text-xs text-slate-400">Problem 1</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Ocean Submarine Exploration</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        A research submarine is submerged at <strong>-150 m</strong>. It descends another <strong>75 m</strong>, then rises <strong>90 m</strong>. What is its current depth?
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    <button onclick="toggleSolution('sol-1')" class="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center justify-between w-full">
+                        <span><i class="fa-solid fa-key mr-1"></i> View Solution</span>
+                        <i id="icon-sol-1" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div id="sol-1" class="hidden mt-3 pt-3 border-t border-slate-200 text-xs text-slate-700 space-y-1">
+                        <p><strong>Equation:</strong> (-150) + (-75) + 90</p>
+                        <p class="text-blue-700 font-bold mt-1">&rarr; Answer: -135 meters</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 2: Baking Recipe (Fractions) -->
+            <div class="pcard pcard-fractions bg-white rounded-3xl p-6 border border-slate-200 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">
+                            <i class="fa-solid fa-cookie-bite mr-1"></i> Fractions
+                        </span>
+                        <span class="text-xs text-slate-400">Problem 2</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Baking Flour Calculation</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Siti has <strong>2 1/2 kg</strong> of flour. She uses <strong>3/4 kg</strong> to bake a cake, and then buys another <strong>1 1/4 kg</strong>. How much flour does she have now?
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    <button onclick="toggleSolution('sol-2')" class="text-xs font-bold text-teal-600 hover:text-teal-800 flex items-center justify-between w-full">
+                        <span><i class="fa-solid fa-key mr-1"></i> View Solution</span>
+                        <i id="icon-sol-2" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div id="sol-2" class="hidden mt-3 pt-3 border-t border-slate-200 text-xs text-slate-700 space-y-1">
+                        <p><strong>Equation:</strong> 5/2 - 3/4 + 5/4 = 10/4 - 3/4 + 5/4 = 12/4</p>
+                        <p class="text-teal-700 font-bold mt-1">&rarr; Answer: 3 kg</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 3: Supermarket Shopping (Decimals) -->
+            <div class="pcard pcard-decimals bg-white rounded-3xl p-6 border border-slate-200 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">
+                            <i class="fa-solid fa-cart-shopping mr-1"></i> Decimals
+                        </span>
+                        <span class="text-xs text-slate-400">Problem 3</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Supermarket Bill & Change</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Budi buys apples for <strong>$4.75</strong> and milk for <strong>$3.40</strong>. He pays with a <strong>$10.00</strong> bill. How much change should he receive?
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    <button onclick="toggleSolution('sol-3')" class="text-xs font-bold text-emerald-600 hover:text-emerald-800 flex items-center justify-between w-full">
+                        <span><i class="fa-solid fa-key mr-1"></i> View Solution</span>
+                        <i id="icon-sol-3" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div id="sol-3" class="hidden mt-3 pt-3 border-t border-slate-200 text-xs text-slate-700 space-y-1">
+                        <p><strong>Total Spent:</strong> $4.75 + $3.40 = $8.15</p>
+                        <p><strong>Change:</strong> $10.00 - $8.15</p>
+                        <p class="text-emerald-700 font-bold mt-1">&rarr; Answer: $1.85</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 4: Temperature Fluctuation (Integers) -->
+            <div class="pcard pcard-integers bg-white rounded-3xl p-6 border border-slate-200 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">
+                            <i class="fa-solid fa-temperature-quarter mr-1"></i> Integers
+                        </span>
+                        <span class="text-xs text-slate-400">Problem 4</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Jayawijaya Mountain Temperature</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        At dawn, the temperature was <strong>-5°C</strong>. By noon, it rose by <strong>11°C</strong>, and at night dropped by <strong>8°C</strong>. What is the final temperature?
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    <button onclick="toggleSolution('sol-4')" class="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center justify-between w-full">
+                        <span><i class="fa-solid fa-key mr-1"></i> View Solution</span>
+                        <i id="icon-sol-4" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div id="sol-4" class="hidden mt-3 pt-3 border-t border-slate-200 text-xs text-slate-700 space-y-1">
+                        <p><strong>Equation:</strong> (-5) + 11 - 8</p>
+                        <p class="text-blue-700 font-bold mt-1">&rarr; Answer: -2°C</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 5: Pizza Sharing (Fractions) -->
+            <div class="pcard pcard-fractions bg-white rounded-3xl p-6 border border-slate-200 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full">
+                            <i class="fa-solid fa-pizza-slice mr-1"></i> Fractions
+                        </span>
+                        <span class="text-xs text-slate-400">Problem 5</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Classroom Pizza Party</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Anisa eats <strong>2/8</strong> of a large pizza and Anton eats <strong>3/8</strong>. What fraction of the pizza is remaining for their friends?
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    <button onclick="toggleSolution('sol-5')" class="text-xs font-bold text-teal-600 hover:text-teal-800 flex items-center justify-between w-full">
+                        <span><i class="fa-solid fa-key mr-1"></i> View Solution</span>
+                        <i id="icon-sol-5" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div id="sol-5" class="hidden mt-3 pt-3 border-t border-slate-200 text-xs text-slate-700 space-y-1">
+                        <p><strong>Eaten:</strong> 2/8 + 3/8 = 5/8</p>
+                        <p><strong>Remaining:</strong> 1 - 5/8 = 8/8 - 5/8</p>
+                        <p class="text-teal-700 font-bold mt-1">&rarr; Answer: 3/8 of the pizza</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 6: Running Track Distance (Decimals) -->
+            <div class="pcard pcard-decimals bg-white rounded-3xl p-6 border border-slate-200 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">
+                            <i class="fa-solid fa-person-running mr-1"></i> Decimals
+                        </span>
+                        <span class="text-xs text-slate-400">Problem 6</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Athletic Running Laps</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Each lap around the school field is <strong>0.4 km</strong>. If Rian completes <strong>6.5 laps</strong>, what total distance in kilometers did he run?
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    <button onclick="toggleSolution('sol-6')" class="text-xs font-bold text-emerald-600 hover:text-emerald-800 flex items-center justify-between w-full">
+                        <span><i class="fa-solid fa-key mr-1"></i> View Solution</span>
+                        <i id="icon-sol-6" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div id="sol-6" class="hidden mt-3 pt-3 border-t border-slate-200 text-xs text-slate-700 space-y-1">
+                        <p><strong>Equation:</strong> 0.4 × 6.5</p>
+                        <p class="text-emerald-700 font-bold mt-1">&rarr; Answer: 2.6 km</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tiered Formative Quiz Section (Easy, Medium, Hard across 4 Phases) -->
+    <section id="quiz" class="py-16 bg-gradient-to-b from-slate-100 to-blue-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Formative Assessment</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Mastery Quiz</h2>
+                <p class="text-slate-600 text-sm mt-2">Select a learning phase and difficulty level to test your skills with instant feedback and worked explanations!</p>
+            </div>
+
+            <!-- Phase & Difficulty Selectors -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Select Learning Phase</label>
+                        <select id="phase-select" onchange="changeQuizSettings()" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 font-semibold focus:outline-none focus:border-blue-500">
+                            <option value="1">Phase 1: Integers Operations</option>
+                            <option value="2">Phase 2: Fractions & Decimals</option>
+                            <option value="3">Phase 3: Contextual Real-World Problems</option>
+                            <option value="4">Phase 4: Advanced Conversions & Mixed Math</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Select Difficulty Level</label>
+                        <select id="diff-select" onchange="changeQuizSettings()" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 font-semibold focus:outline-none focus:border-blue-500">
+                            <option value="easy">Easy Level</option>
+                            <option value="medium" selected>Medium Level</option>
+                            <option value="hard">Hard Level</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Card -->
+            <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl relative">
+                
+                <!-- Progress Header -->
+                <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-100">
+                    <span id="quiz-progress-text" class="text-xs font-bold text-slate-500 uppercase tracking-wider">Question 1 of 3</span>
+                    <div class="w-36 bg-slate-100 rounded-full h-2.5 overflow-hidden">
+                        <div id="quiz-progress-bar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" style="width: 33.3%"></div>
+                    </div>
+                </div>
+
+                <!-- Question Container -->
+                <div id="quiz-box">
+                    <div id="quiz-badge-tag" class="inline-block bg-blue-100 text-blue-800 text-[11px] font-bold px-3 py-1 rounded-full mb-3">Phase 1 • Medium</div>
+                    <h3 id="question-text" class="font-heading text-xl font-bold text-slate-900 mb-6">
+                        Loading Question...
+                    </h3>
+
+                    <!-- Option Buttons -->
+                    <div id="options-container" class="space-y-3">
+                        <!-- Dynamic options generated by JS -->
+                    </div>
+
+                    <!-- Instant Explanation -->
+                    <div id="quiz-explanation" class="hidden mt-6 p-4 rounded-2xl text-xs sm:text-sm font-sans"></div>
+
+                    <!-- Next Button -->
+                    <div class="mt-8 flex justify-end">
+                        <button id="next-btn" onclick="nextQuestion()" class="hidden bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2.5 rounded-xl shadow-md transition flex items-center space-x-2">
+                            <span>Next Question</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Box (Hidden initially) -->
+                <div id="quiz-results" class="hidden text-center py-8 space-y-6">
+                    <div id="badge-icon" class="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto text-3xl font-bold">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading text-3xl font-extrabold text-slate-900">Quiz Completed!</h3>
+                        <p class="text-slate-600 text-sm mt-1">Here is your performance summary for this topic:</p>
+                    </div>
+
+                    <div class="inline-block bg-slate-50 border border-slate-200 rounded-2xl px-8 py-4">
+                        <span id="final-score" class="font-heading font-black text-5xl text-blue-600">0 / 3</span>
+                        <span class="block text-xs text-slate-500 font-semibold mt-1" id="score-feedback">Good Effort!</span>
+                    </div>
+
+                    <div>
+                        <button onclick="restartQuiz()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition inline-flex items-center space-x-2">
+                            <i class="fa-solid fa-rotate-right"></i>
+                            <span>Retake Quiz</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Cheatsheet Section -->
+    <section class="py-12 bg-slate-900 text-slate-300 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="font-heading text-xl font-bold text-white text-center mb-8">Quick Rules Cheatsheet</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-slate-800/80 p-4 rounded-2xl border border-slate-700">
+                    <h4 class="font-bold text-blue-400 text-sm mb-1"><i class="fa-solid fa-calculator mr-1"></i> Integers</h4>
+                    <p class="text-xs">Same signs: Add & keep sign.<br>Diff signs: Subtract & keep sign of larger abs value.<br>(-) × (-) = (+), (-) ÷ (-) = (+)</p>
+                </div>
+                <div class="bg-slate-800/80 p-4 rounded-2xl border border-slate-700">
+                    <h4 class="font-bold text-teal-400 text-sm mb-1"><i class="fa-solid fa-pie-chart mr-1"></i> Fractions</h4>
+                    <p class="text-xs">Add/Sub: Must find Common Denominator (LCM).<br>Mul: Top × Top, Bottom × Bottom.<br>Div: Keep, Change (×), Flip reciprocal.</p>
+                </div>
+                <div class="bg-slate-800/80 p-4 rounded-2xl border border-slate-700">
+                    <h4 class="font-bold text-emerald-400 text-sm mb-1"><i class="fa-solid fa-hashtag mr-1"></i> Decimals</h4>
+                    <p class="text-xs">Add/Sub: Line up decimal points vertically.<br>Mul: Count total decimal places.<br>Div: Shift decimal points to make divisor a whole number.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 text-xs py-8 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+            <p class="font-heading text-slate-200 font-bold text-sm">Grade 7 Mathematics - Kurikulum Merdeka Learning Hub</p>
+            <p>Designed for SMP/MTs Grade 7 Students & Teachers. Covers Capaian Pembelajaran (CP) Bilangan Rasional.</p>
+            <p class="text-slate-600">&copy; 2026 Interactive Public Education Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Switch Main Learning Topics (Integers, Fractions, Decimals)
+        function switchMainTopic(topicKey) {
+            const topics = ['integers', 'fractions', 'decimals'];
+            topics.forEach(t => {
+                const btn = document.getElementById(`mtopic-${t}`);
+                const sec = document.getElementById(`section-${t}`);
+                if (t === topicKey) {
+                    btn.className = 'mtopic-btn active px-6 py-3 rounded-2xl font-heading font-bold text-sm transition-all shadow-md bg-blue-600 text-white border border-blue-600 flex items-center space-x-2';
+                    sec.classList.remove('hidden');
+                } else {
+                    btn.className = 'mtopic-btn px-6 py-3 rounded-2xl font-heading font-bold text-sm transition-all bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 flex items-center space-x-2';
+                    sec.classList.add('hidden');
+                }
+            });
+        }
+
+        // Switch Sub-tabs in Integers
+        function switchIntTab(subKey) {
+            const tabs = ['add', 'sub', 'mul', 'div'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`inttab-${t}`);
+                const content = document.getElementById(`intcontent-${t}`);
+                if (t === subKey) {
+                    btn.className = 'inttab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-blue-600 text-white';
+                    content.classList.remove('hidden');
+                } else {
+                    btn.className = 'inttab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200';
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        // Switch Sub-tabs in Fractions
+        function switchFracTab(subKey) {
+            const tabs = ['addsub', 'muldiv', 'mixed'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`fractab-${t}`);
+                const content = document.getElementById(`fraccontent-${t}`);
+                if (t === subKey) {
+                    btn.className = 'fractab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-teal-600 text-white';
+                    content.classList.remove('hidden');
+                } else {
+                    btn.className = 'fractab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200';
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        // Switch Sub-tabs in Decimals
+        function switchDecTab(subKey) {
+            const tabs = ['ops', 'conversion'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`dectab-${t}`);
+                const content = document.getElementById(`deccontent-${t}`);
+                if (t === subKey) {
+                    btn.className = 'dectab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-emerald-600 text-white';
+                    content.classList.remove('hidden');
+                } else {
+                    btn.className = 'dectab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200';
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        // Switch Interactive Workbench Tools
+        function switchTool(toolKey) {
+            const tools = ['numline', 'fracvis', 'converter'];
+            tools.forEach(t => {
+                const btn = document.getElementById(`toolbtn-${t}`);
+                const panel = document.getElementById(`tool-${t}`);
+                if (t === toolKey) {
+                    btn.className = 'tool-btn px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm bg-blue-600 text-white';
+                    panel.classList.remove('hidden');
+                } else {
+                    btn.className = 'tool-btn px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm bg-slate-800 text-slate-300 hover:bg-slate-700';
+                    panel.classList.add('hidden');
+                }
+            });
+            if (toolKey === 'numline') updateSimulator();
+        }
+
+        // Toggle Word Problem Solutions
+        function toggleSolution(solId) {
+            const element = document.getElementById(solId);
+            const icon = document.getElementById(`icon-${solId}`);
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+                icon.className = 'fa-solid fa-chevron-up';
+            } else {
+                element.classList.add('hidden');
+                icon.className = 'fa-solid fa-chevron-down';
+            }
+        }
+
+        // Filter Word Problems Category
+        function filterProblems(category) {
+            const buttons = ['all', 'integers', 'fractions', 'decimals'];
+            buttons.forEach(b => {
+                const btn = document.getElementById(`pfilter-${b}`);
+                if (b === category) {
+                    btn.className = 'pfilter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-blue-600 text-white';
+                } else {
+                    btn.className = 'pfilter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200';
+                }
+            });
+
+            const cards = document.querySelectorAll('.pcard');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(`pcard-${category}`)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Integer Number Line SVG Visualizer
+        const numAInput = document.getElementById('num-a');
+        const numBInput = document.getElementById('num-b');
+        const opSelect = document.getElementById('op-select');
+        const simResult = document.getElementById('sim-result');
+        const simExplanation = document.getElementById('sim-explanation');
+        const svg = document.getElementById('numberline-svg');
+
+        function updateSimulator() {
+            if (!numAInput || !numBInput || !opSelect) return;
+            const a = parseInt(numAInput.value) || 0;
+            const b = parseInt(numBInput.value) || 0;
+            const op = opSelect.value;
+
+            let res = 0;
+            let explanationText = "";
+
+            if (op === '+') {
+                res = a + b;
+                explanationText = `Start at 0 &rarr; Move to <strong>${a}</strong> &rarr; Add <strong>${b}</strong> units &rarr; End at <strong>${res}</strong>.`;
+            } else if (op === '-') {
+                res = a - b;
+                explanationText = `Start at 0 &rarr; Move to <strong>${a}</strong> &rarr; Convert to addition: ${a} + (${-b}) &rarr; End at <strong>${res}</strong>.`;
+            } else if (op === '*') {
+                res = a * b;
+                explanationText = `Multiply <strong>${a}</strong> by <strong>${b}</strong> &rarr; End at <strong>${res}</strong>.`;
+            } else if (op === '/') {
+                if (b === 0) {
+                    simResult.innerText = "Error";
+                    simExplanation.innerHTML = "<span class='text-red-400 font-bold'>Division by zero is undefined!</span>";
+                    drawNumberLine(a, 0, 0);
+                    return;
+                }
+                res = Math.round((a / b) * 100) / 100;
+                explanationText = `Divide <strong>${a}</strong> by <strong>${b}</strong> &rarr; End at <strong>${res}</strong>.`;
+            }
+
+            simResult.innerText = (res > 0 ? '+' : '') + res;
+            simExplanation.innerHTML = explanationText;
+
+            drawNumberLine(a, b, res);
+        }
+
+        function drawNumberLine(a, b, res) {
+            if (!svg) return;
+            svg.innerHTML = '';
+
+            const width = svg.clientWidth || 600;
+            const height = svg.clientHeight || 180;
+            const centerY = height - 40;
+
+            const minVal = -10;
+            const maxVal = 10;
+            const range = maxVal - minVal;
+
+            function getX(val) {
+                const clamped = Math.max(minVal, Math.min(maxVal, val));
+                return 40 + ((clamped - minVal) / range) * (width - 80);
+            }
+
+            const mainLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            mainLine.setAttribute('x1', '20');
+            mainLine.setAttribute('y1', centerY);
+            mainLine.setAttribute('x2', width - 20);
+            mainLine.setAttribute('y2', centerY);
+            mainLine.setAttribute('stroke', '#64748b');
+            mainLine.setAttribute('stroke-width', '3');
+            svg.appendChild(mainLine);
+
+            for (let i = minVal; i <= maxVal; i++) {
+                const x = getX(i);
+                const tick = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                tick.setAttribute('x1', x);
+                tick.setAttribute('y1', centerY - 6);
+                tick.setAttribute('x2', x);
+                tick.setAttribute('y2', centerY + 6);
+                tick.setAttribute('stroke', i === 0 ? '#3b82f6' : '#94a3b8');
+                tick.setAttribute('stroke-width', i === 0 ? '3' : '1.5');
+                svg.appendChild(tick);
+
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttribute('x', x);
+                text.setAttribute('y', centerY + 24);
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('fill', i === 0 ? '#60a5fa' : '#94a3b8');
+                text.setAttribute('font-size', '12');
+                text.setAttribute('font-weight', i === 0 ? 'bold' : 'normal');
+                text.textContent = i;
+                svg.appendChild(text);
+            }
+
+            const x0 = getX(0);
+            const xA = getX(a);
+
+            if (a !== 0) {
+                const arrowA = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                const pathD = `M ${x0} ${centerY - 25} Q ${(x0 + xA)/2} ${centerY - 55} ${xA} ${centerY - 25}`;
+                arrowA.setAttribute('d', pathD);
+                arrowA.setAttribute('fill', 'none');
+                arrowA.setAttribute('stroke', '#3b82f6');
+                arrowA.setAttribute('stroke-width', '2.5');
+                arrowA.setAttribute('stroke-dasharray', '4');
+                svg.appendChild(arrowA);
+            }
+
+            const xRes = getX(res);
+            const arrowB = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            const pathD2 = `M ${xA} ${centerY - 25} Q ${(xA + xRes)/2} ${centerY - 85} ${xRes} ${centerY - 25}`;
+            arrowB.setAttribute('d', pathD2);
+            arrowB.setAttribute('fill', 'none');
+            arrowB.setAttribute('stroke', '#10b981');
+            arrowB.setAttribute('stroke-width', '3');
+            svg.appendChild(arrowB);
+
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', xRes);
+            circle.setAttribute('cy', centerY);
+            circle.setAttribute('r', '6');
+            circle.setAttribute('fill', '#f59e0b');
+            svg.appendChild(circle);
+        }
+
+        // Fraction Visualizer & Calculator Logic
+        function gcd(a, b) {
+            return b === 0 ? Math.abs(a) : gcd(b, a % b);
+        }
+
+        function updateFractionCalc() {
+            const f1Num = parseInt(document.getElementById('f1-num').value) || 1;
+            const f1Den = parseInt(document.getElementById('f1-den').value) || 1;
+            const f2Num = parseInt(document.getElementById('f2-num').value) || 1;
+            const f2Den = parseInt(document.getElementById('f2-den').value) || 1;
+            const op = document.getElementById('frac-op').value;
+
+            // Update portion bar fills
+            const pct1 = Math.min(100, Math.max(0, (f1Num / f1Den) * 100));
+            const pct2 = Math.min(100, Math.max(0, (f2Num / f2Den) * 100));
+            document.getElementById('bar1-fill').style.width = `${pct1}%`;
+            document.getElementById('bar2-fill').style.width = `${pct2}%`;
+            document.getElementById('lbl-bar1').innerText = `Fraction 1: ${f1Num}/${f1Den} (${pct1.toFixed(1)}%)`;
+            document.getElementById('lbl-bar2').innerText = `Fraction 2: ${f2Num}/${f2Den} (${pct2.toFixed(1)}%)`;
+
+            let resNum = 0, resDen = 1;
+            let steps = "";
+
+            if (op === '+') {
+                resNum = (f1Num * f2Den) + (f2Num * f1Den);
+                resDen = f1Den * f2Den;
+                steps = `${f1Num}/${f1Den} + ${f2Num}/${f2Den} = (${f1Num*f2Den} + ${f2Num*f1Den}) / ${resDen} = ${resNum}/${resDen}`;
+            } else if (op === '-') {
+                resNum = (f1Num * f2Den) - (f2Num * f1Den);
+                resDen = f1Den * f2Den;
+                steps = `${f1Num}/${f1Den} - ${f2Num}/${f2Den} = (${f1Num*f2Den} - ${f2Num*f1Den}) / ${resDen} = ${resNum}/${resDen}`;
+            } else if (op === '*') {
+                resNum = f1Num * f2Num;
+                resDen = f1Den * f2Den;
+                steps = `(${f1Num} × ${f2Num}) / (${f1Den} × ${f2Den}) = ${resNum}/${resDen}`;
+            } else if (op === '/') {
+                resNum = f1Num * f2Den;
+                resDen = f1Den * f2Num;
+                steps = `${f1Num}/${f1Den} ÷ ${f2Num}/${f2Den} = ${f1Num}/${f1Den} × ${f2Den}/${f2Num} = ${resNum}/${resDen}`;
+            }
+
+            const g = gcd(resNum, resDen);
+            const simpNum = resNum / g;
+            const simpDen = resDen / g;
+
+            let resultStr = "";
+            if (simpDen === 1) {
+                resultStr = `${simpNum}`;
+            } else if (Math.abs(simpNum) > simpDen && simpDen > 0) {
+                const whole = Math.floor(Math.abs(simpNum) / simpDen) * (simpNum < 0 ? -1 : 1);
+                const rem = Math.abs(simpNum) % simpDen;
+                resultStr = `${whole} ${rem}/${simpDen} (${simpNum}/${simpDen})`;
+            } else {
+                resultStr = `${simpNum}/${simpDen}`;
+            }
+
+            document.getElementById('frac-calc-steps').innerText = steps;
+            document.getElementById('frac-calc-result').innerText = resultStr;
+        }
+
+        // Decimal & Percent Converter Logic
+        function updateConverter() {
+            const num = parseInt(document.getElementById('conv-num').value) || 1;
+            const den = parseInt(document.getElementById('conv-den').value) || 1;
+
+            const decVal = num / den;
+            const pctVal = decVal * 100;
+
+            document.getElementById('conv-dec').innerText = decVal.toFixed(3);
+            document.getElementById('conv-pct').innerText = pctVal.toFixed(1) + '%';
+            document.getElementById('conv-status').innerText = num < den ? 'Proper Fraction' : (num === den ? 'Equal to 1 Whole' : 'Improper Fraction');
+        }
+
+        // Event listeners for tools
+        if (numAInput && numBInput && opSelect) {
+            numAInput.addEventListener('input', updateSimulator);
+            numBInput.addEventListener('input', updateSimulator);
+            opSelect.addEventListener('change', updateSimulator);
+            window.addEventListener('resize', updateSimulator);
+            setTimeout(updateSimulator, 200);
+        }
+
+        ['f1-num', 'f1-den', 'f2-num', 'f2-den', 'frac-op'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('change', updateFractionCalc);
+            if (el) el.addEventListener('input', updateFractionCalc);
+        });
+
+        ['conv-num', 'conv-den'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('input', updateConverter);
+        });
+
+        updateFractionCalc();
+        updateConverter();
+
+        // 4-Phase Tiered Quiz Data (Phase 1: Integers, Phase 2: Fractions/Decimals, Phase 3: Word Problems, Phase 4: Conversions)
+        const tieredQuizData = {
+            "1_easy": [
+                {
+                    question: "What is (+8) + (-5)?",
+                    options: ["+13", "+3", "-3", "-13"],
+                    correct: 1,
+                    explanation: "Different signs: Subtract absolute values (8 - 5 = 3). Keep sign of larger number (+8), so result is +3."
+                },
+                {
+                    question: "Evaluate: (-4) × (-6)",
+                    options: ["-24", "+24", "-10", "+10"],
+                    correct: 1,
+                    explanation: "Multiplying two negative numbers always yields a POSITIVE product: (-4) × (-6) = +24."
+                },
+                {
+                    question: "What is (-18) ÷ (+3)?",
+                    options: ["-6", "+6", "-15", "+15"],
+                    correct: 0,
+                    explanation: "Negative divided by positive gives a negative result: -18 ÷ 3 = -6."
+                }
+            ],
+            "1_medium": [
+                {
+                    question: "Evaluate: (-7) - (-12)",
+                    options: ["-19", "-5", "+5", "+19"],
+                    correct: 2,
+                    explanation: "Use KCC (Keep-Change-Change): (-7) - (-12) becomes (-7) + (+12) = +5."
+                },
+                {
+                    question: "Calculate: [(-15) + (+5)] × (-2)",
+                    options: ["-20", "+20", "-10", "+10"],
+                    correct: 1,
+                    explanation: "Step 1: (-15) + (+5) = -10. Step 2: (-10) × (-2) = +20."
+                },
+                {
+                    question: "What is the value of: (-32) ÷ [(-2) × (+4)]?",
+                    options: ["-4", "+4", "-16", "+16"],
+                    correct: 1,
+                    explanation: "Bracket first: (-2) × (+4) = -8. Then (-32) ÷ (-8) = +4."
+                }
+            ],
+            "1_hard": [
+                {
+                    question: "Calculate: [(-24) ÷ (+4)] - [(-5) × (-3)]",
+                    options: ["-21", "+21", "-9", "+9"],
+                    correct: 0,
+                    explanation: "Step 1: (-24) ÷ 4 = -6. Step 2: (-5) × (-3) = +15. Step 3: -6 - (+15) = -21."
+                },
+                {
+                    question: "Solve for x: (-18) - x = +7",
+                    options: ["+25", "-25", "+11", "-11"],
+                    correct: 1,
+                    explanation: "Rearranging: x = (-18) - (+7) = -18 + (-7) = -25."
+                },
+                {
+                    question: "Evaluate: (-3)³ + | -15 |",
+                    options: ["-42", "+12", "-12", "+42"],
+                    correct: 2,
+                    explanation: "(-3)³ = -27. |-15| = 15. Then -27 + 15 = -12."
+                }
+            ],
+            "2_easy": [
+                {
+                    question: "What is 2/5 + 1/5?",
+                    options: ["3/10", "3/5", "2/25", "1/5"],
+                    correct: 1,
+                    explanation: "Same denominators: Add numerators (2 + 1 = 3), keep denominator 5 &rarr; 3/5."
+                },
+                {
+                    question: "Calculate: 0.4 + 0.25",
+                    options: ["0.29", "0.65", "0.75", "0.60"],
+                    correct: 1,
+                    explanation: "Line up decimals: 0.40 + 0.25 = 0.65."
+                },
+                {
+                    question: "Multiply: (1/3) × (3/4)",
+                    options: ["1/4", "4/7", "3/12", "1/12"],
+                    correct: 0,
+                    explanation: "(1×3)/(3×4) = 3/12, which simplifies to 1/4."
+                }
+            ],
+            "2_medium": [
+                {
+                    question: "Calculate: 3/4 - 1/3",
+                    options: ["2/1", "5/12", "1/12", "2/12"],
+                    correct: 1,
+                    explanation: "LCM of 4 and 3 is 12. 9/12 - 4/12 = 5/12."
+                },
+                {
+                    question: "Evaluate: (2/5) ÷ (4/7)",
+                    options: ["8/35", "7/10", "10/7", "14/20"],
+                    correct: 1,
+                    explanation: "Keep-Change-Flip: (2/5) × (7/4) = 14/20 = 7/10."
+                },
+                {
+                    question: "Calculate: 1.2 × 0.15",
+                    options: ["0.18", "1.8", "0.018", "0.27"],
+                    correct: 0,
+                    explanation: "Multiply 12 × 15 = 180. Total decimal places: 1 + 2 = 3. So 0.180 = 0.18."
+                }
+            ],
+            "2_hard": [
+                {
+                    question: "Evaluate: 2 1/3 + 1 3/4",
+                    options: ["3 4/7", "4 1/12", "3 1/12", "4 5/12"],
+                    correct: 1,
+                    explanation: "Convert to improper: 7/3 + 7/4 = 28/12 + 21/12 = 49/12 = 4 1/12."
+                },
+                {
+                    question: "Calculate: 3.6 ÷ 0.09",
+                    options: ["0.4", "4", "40", "400"],
+                    correct: 2,
+                    explanation: "Shift decimal 2 places right in both numbers: 360 ÷ 9 = 40."
+                },
+                {
+                    question: "Simplify: (1/2 + 2/3) ÷ (5/6)",
+                    options: ["1", "7/5", "5/7", "1 2/5"],
+                    correct: 3,
+                    explanation: "Bracket: 3/6 + 4/6 = 7/6. Then (7/6) ÷ (5/6) = (7/6) × (6/5) = 7/5 = 1 2/5."
+                }
+            ],
+            "3_easy": [
+                {
+                    question: "The temperature is -3°C and rises by 7°C. What is the new temperature?",
+                    options: ["+4°C", "-10°C", "+10°C", "-4°C"],
+                    correct: 0,
+                    explanation: "(-3) + 7 = +4°C."
+                },
+                {
+                    question: "Budi has 3/4 of a chocolate bar and gives 1/4 to his sister. How much does he have left?",
+                    options: ["1/2", "2/8", "1/4", "3/8"],
+                    correct: 0,
+                    explanation: "3/4 - 1/4 = 2/4 = 1/2 chocolate bar."
+                },
+                {
+                    question: "Siti buys an item for $3.50 and another for $2.25. Total cost?",
+                    options: ["$5.75", "$5.50", "$6.00", "$5.25"],
+                    correct: 0,
+                    explanation: "$3.50 + $2.25 = $5.75."
+                }
+            ],
+            "3_medium": [
+                {
+                    question: "A submarine is at -180m depth. It rises 50m, then descends 30m. Final depth?",
+                    options: ["-160m", "-200m", "-100m", "-260m"],
+                    correct: 0,
+                    explanation: "(-180) + 50 + (-30) = -130 - 30 = -160 meters."
+                },
+                {
+                    question: "A recipe requires 2 1/2 cups of flour. If Ani makes 3 batches, how many cups of flour does she need?",
+                    options: ["7 1/2 cups", "6 1/2 cups", "5 cups", "8 cups"],
+                    correct: 0,
+                    explanation: "(5/2) × 3 = 15/2 = 7 1/2 cups."
+                },
+                {
+                    question: "Rian buys 4 notebooks at $1.85 each. How much change does he get from $10.00?",
+                    options: ["$2.60", "$7.40", "$3.60", "$2.40"],
+                    correct: 0,
+                    explanation: "Total spent = 4 × $1.85 = $7.40. Change = $10.00 - $7.40 = $2.60."
+                }
+            ],
+            "3_hard": [
+                {
+                    question: "In a test of 25 questions: Correct = +4, Incorrect = -2, Blank = 0. A student answers 18 correctly, 5 incorrectly, and 2 blank. Total score?",
+                    options: ["62", "68", "72", "58"],
+                    correct: 0,
+                    explanation: "Score = (18 × 4) + (5 × -2) + 0 = 72 - 10 = 62 points."
+                },
+                {
+                    question: "A tank contains 12.5 liters of water. Leaks lose 0.75 liters per hour for 6 hours. Remaining water?",
+                    options: ["8.0 L", "7.5 L", "8.5 L", "9.0 L"],
+                    correct: 0,
+                    explanation: "Loss = 0.75 × 6 = 4.5 liters. Remaining = 12.5 - 4.5 = 8.0 liters."
+                },
+                {
+                    question: "A merchant bought 15 kg of sugar. He sold 2/5 of it on Monday and 1/3 of the REMAINING on Tuesday. How many kg are left?",
+                    options: ["6 kg", "9 kg", "5 kg", "8 kg"],
+                    correct: 0,
+                    explanation: "Monday sold = 2/5 × 15 = 6 kg. Remaining = 9 kg. Tuesday sold = 1/3 × 9 = 3 kg. Final remaining = 9 - 3 = 6 kg."
+                }
+            ],
+            "4_easy": [
+                {
+                    question: "Convert 1/2 into a percentage.",
+                    options: ["20%", "50%", "25%", "5%"],
+                    correct: 1,
+                    explanation: "1/2 = 0.5 = 50%."
+                },
+                {
+                    question: "Express 0.75 as a simplified fraction.",
+                    options: ["3/4", "7/5", "75/10", "1/4"],
+                    correct: 0,
+                    explanation: "0.75 = 75/100 = 3/4."
+                },
+                {
+                    question: "What is 20% of 50?",
+                    options: ["10", "5", "20", "15"],
+                    correct: 0,
+                    explanation: "(20/100) × 50 = 10."
+                }
+            ],
+            "4_medium": [
+                {
+                    question: "Which rational number is equivalent to 3/8?",
+                    options: ["0.375", "0.38", "0.625", "0.3"],
+                    correct: 0,
+                    explanation: "3 ÷ 8 = 0.375."
+                },
+                {
+                    question: "Convert 0.125 into a fraction in lowest terms.",
+                    options: ["1/8", "1/4", "1/12", "3/8"],
+                    correct: 0,
+                    explanation: "0.125 = 125/1000 = 1/8."
+                },
+                {
+                    question: "Order from smallest to largest: 0.4, 1/3, 35%",
+                    options: ["35%, 1/3, 0.4", "1/3, 35%, 0.4", "0.4, 35%, 1/3", "1/3, 0.4, 35%"],
+                    correct: 1,
+                    explanation: "Convert all to decimals: 1/3 ≈ 0.333, 35% = 0.35, 0.4 = 0.40. Order: 1/3, 35%, 0.4."
+                }
+            ],
+            "4_hard": [
+                {
+                    question: "Calculate: 1/4 + 0.5 - 25%",
+                    options: ["0.5", "0.75", "0.25", "1.0"],
+                    correct: 0,
+                    explanation: "Convert all to decimals: 0.25 + 0.50 - 0.25 = 0.50."
+                },
+                {
+                    question: "A shirt originally priced at $40 is discounted by 15%. What is the sale price?",
+                    options: ["$34", "$32", "$36", "$28"],
+                    correct: 0,
+                    explanation: "Discount = 0.15 × $40 = $6. Sale price = $40 - $6 = $34."
+                },
+                {
+                    question: "Evaluate: (0.6 × 5/6) ÷ 20%",
+                    options: ["2.5", "1.5", "3.0", "0.5"],
+                    correct: 0,
+                    explanation: "0.6 = 3/5. (3/5) × (5/6) = 3/6 = 0.5. Then 0.5 ÷ 0.20 = 2.5."
+                }
+            ]
+        };
+
+        let currentPhase = "1";
+        let currentDiff = "medium";
+        let activeQuizQuestions = [];
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+        function changeQuizSettings() {
+            currentPhase = document.getElementById('phase-select').value;
+            currentDiff = document.getElementById('diff-select').value;
+            restartQuiz();
+        }
+
+        function renderQuestion() {
+            answered = false;
+            const key = `${currentPhase}_${currentDiff}`;
+            activeQuizQuestions = tieredQuizData[key] || tieredQuizData["1_medium"];
+
+            const q = activeQuizQuestions[currentQuestion];
+            document.getElementById('quiz-progress-text').innerText = `Question ${currentQuestion + 1} of ${activeQuizQuestions.length}`;
+            document.getElementById('quiz-progress-bar').style.width = `${((currentQuestion + 1) / activeQuizQuestions.length) * 100}%`;
+            
+            const phaseNames = { 
+                "1": "Phase 1: Integers Operations", 
+                "2": "Phase 2: Fractions & Decimals", 
+                "3": "Phase 3: Contextual Problems", 
+                "4": "Phase 4: Advanced Conversions" 
+            };
+            document.getElementById('quiz-badge-tag').innerText = `${phaseNames[currentPhase]} • ${currentDiff.toUpperCase()}`;
+            document.getElementById('question-text').innerText = q.question;
+
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            const explanationBox = document.getElementById('quiz-explanation');
+            explanationBox.className = 'hidden mt-6 p-4 rounded-2xl text-xs sm:text-sm font-sans';
+            explanationBox.innerText = '';
+
+            document.getElementById('next-btn').classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left p-4 rounded-2xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 transition font-medium text-slate-800 text-sm flex items-center justify-between';
+                btn.innerHTML = `<span>${opt}</span> <i class="fa-regular fa-circle text-slate-300"></i>`;
+                btn.onclick = () => checkAnswer(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIdx, btnElement) {
+            if (answered) return;
+            answered = true;
+
+            const q = activeQuizQuestions[currentQuestion];
+            const optionsContainer = document.getElementById('options-container');
+            const buttons = optionsContainer.getElementsByTagName('button');
+
+            if (selectedIdx === q.correct) {
+                score++;
+                btnElement.className = 'w-full text-left p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50 text-emerald-900 font-bold text-sm flex items-center justify-between';
+                btnElement.innerHTML = `<span>${q.options[selectedIdx]}</span> <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>`;
+            } else {
+                btnElement.className = 'w-full text-left p-4 rounded-2xl border-2 border-red-500 bg-red-50 text-red-900 font-bold text-sm flex items-center justify-between';
+                btnElement.innerHTML = `<span>${q.options[selectedIdx]}</span> <i class="fa-solid fa-circle-xmark text-red-600 text-lg"></i>`;
+                
+                buttons[q.correct].className = 'w-full text-left p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50 text-emerald-900 font-bold text-sm flex items-center justify-between';
+                buttons[q.correct].innerHTML = `<span>${q.options[q.correct]}</span> <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>`;
+            }
+
+            const explanationBox = document.getElementById('quiz-explanation');
+            explanationBox.className = 'mt-6 p-4 rounded-2xl text-xs sm:text-sm font-sans bg-slate-100 text-slate-700 border border-slate-200 block';
+            explanationBox.innerHTML = `<strong>Explanation:</strong> ${q.explanation}`;
+
+            document.getElementById('next-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < activeQuizQuestions.length) {
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-box').classList.add('hidden');
+            const resultsBox = document.getElementById('quiz-results');
+            resultsBox.classList.remove('hidden');
+
+            document.getElementById('final-score').innerText = `${score} / ${activeQuizQuestions.length}`;
+
+            const feedbackText = document.getElementById('score-feedback');
+            const badgeIcon = document.getElementById('badge-icon');
+
+            if (score === activeQuizQuestions.length) {
+                feedbackText.innerText = "Outstanding! Perfect Mastery!";
+                badgeIcon.className = 'w-20 h-20 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-3xl font-bold';
+            } else if (score >= 2) {
+                feedbackText.innerText = "Great Job! Solid grasp of this phase.";
+                badgeIcon.className = 'w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto text-3xl font-bold';
+            } else {
+                feedbackText.innerText = "Keep practicing! Review the rules above and try again.";
+                badgeIcon.className = 'w-20 h-20 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto text-3xl font-bold';
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-results').classList.add('hidden');
+            document.getElementById('quiz-box').classList.remove('hidden');
+            renderQuestion();
+        }
+
+        // Initialize quiz on load
+        renderQuestion();
+    </script>
+</body>
+</html>
